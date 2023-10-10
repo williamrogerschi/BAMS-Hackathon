@@ -1,0 +1,114 @@
+html {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    margin: 0;
+}
+
+#images-nav {
+    display: flex;
+    align-content: center;
+    align-items: rows;
+    text-decoration: none;
+    width: auto;
+    color: rgb(46,56,65);
+    margin: auto;
+    padding: 0;
+}
+
+#surly-header {
+    background-image: url('./assets/Surly_custom_1.jpg');
+    background-size: cover;
+    background-position: 50% 75%;
+    height: 50vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+#aethos-header {
+    background-image: url('./assets/Aethos.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 50vh;
+    width: 50%;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color:rgba(90, 101, 69, 0.697);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    position: relative;
+    text-decoration: none;
+    width: auto;
+    padding: 0px;
+}
+
+a {
+    padding: 0 100px 0 100px;
+    text-decoration: none;
+    color: black;
+}
+
+/* building out main body of page */
+.bike-build-container {
+    background-color:blanchedalmond;
+    border: 1px solid black;
+    display: flex;
+    align-items: row;
+    padding-top: 100px;
+}
+
+#build-img {
+    background-image: url('./assets/Bicycle-custom-build-service.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 50vh;
+    width: 200%;
+    overflow: hidden;
+}
+
+#build-button-container {
+    margin-left: 40px;
+}
+
+#build-header {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px 20px 40px;
+    margin-right: 40px;
+}
+
+#btn-build-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-build {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: rgba(188, 34, 34, 0.277);
+    color: black;
+}
