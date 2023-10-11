@@ -10,8 +10,8 @@ const DemoSchema = new Schema(
     size: { type: String, required: true },
     url: { type: String, required: true },
     imageUrl: { type: String, required: true },
-    price: { type: String, required: true },
-    savings: { type: String, required: true },
+    priceUSD: { type: Number, required: true },
+    savingsUSD: { type: Number, required: true },
     ships: { type: Boolean, required: true },
   },
   { timestamps: true }
