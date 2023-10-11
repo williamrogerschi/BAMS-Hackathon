@@ -250,7 +250,7 @@ console.log("created some tires")
 }
 
 const seedConfig = async () => {
-    db.dropDatabase()
+    // db.dropDatabase()
     await main()
     db.close()
 }
