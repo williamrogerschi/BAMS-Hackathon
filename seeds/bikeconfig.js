@@ -70,7 +70,7 @@ const main = async () => {
         picURL: "PLACEHOLDER",
     })
     eastonBrand.save()
-}
+
 
 const frames = [
     {
@@ -166,7 +166,7 @@ const wheel = [
         componentType: `Wheel`,
         modelName: `HTZ I30`,
         diameterAvail: [`29in`, `27.5in`],
-        isTubelessReady: True,
+        isTubelessReady: true,
         priceUSD: 329,
         imgURL: `https://www.wtb.com/cdn/shop/products/W045-0263_HTZi30x29wheel_110x15mm_6-bolt_DB_frontfullside_large.jpg?v=1664299847`,
     }, 
@@ -175,7 +175,7 @@ const wheel = [
         componentType: `Wheel`,
         modelName: `CXR I23`,
         diameterAvail: [`700C`],
-        isTubelessReady: True,
+        isTubelessReady: true,
         priceUSD: 749,
         imgURL: `https://www.wtb.com/cdn/shop/products/W045-0248__CZRi23x700wheel_142x12mm_24h_6-bolt_ShimanoHG_fullside_1024x1024.jpg?v=1628107556`,
     },
@@ -184,7 +184,7 @@ const wheel = [
         componentType: `Wheel`,
         modelName: `GRX Thru Axle`,
         diameterAvail: [`700C`, `650B`],
-        isTubelessReady: True,
+        isTubelessReady: true,
         priceUSD: 500,
         imgURL: `https://dassets.shimano.com/content/dam/global/cg1SHICCycling/final/products/cg2SHICComponent/cg3SHICWheel/cg4SHICWheel/WH-RX570-TL-F12-700C_C6_1.jpg/jcr:content/renditions/WH-RX570-TL-F12-700C_C6_1_750_750.jpeg`,
     },
@@ -193,7 +193,7 @@ const wheel = [
         componentType: `Wheel`,
         modelName: `DURA-ACE C60`,
         diameterAvail: [`700C`],
-        isTubelessReady: False,
+        isTubelessReady: false,
         priceUSD: 2000,
         imgURL: `https://dassets.shimano.com/content/dam/global/cg1SHICCycling/final/products/cg2SHICComponent/cg3SHICWheel/cg4SHICWheel/WH-R9270-C60-HR-TU-F-shic219-primary_1.jpg/jcr:content/renditions/WH-R9270-C60-HR-TU-F-shic219-primary_1_750_750.jpeg`,
     }
@@ -208,7 +208,7 @@ const tire = [
         modelName: `Horizon`,
         diameterAvail: [`650B`],
         sizeAvail: [`47mm`],
-        isTubelessReady: True,
+        isTubelessReady: true,
         priceUSD: 66,
         imgURL: `https://www.wtb.com/cdn/shop/products/20200423_Horizon47_tanwall_ISO_large.png?v=1588094659`,
     },
@@ -218,7 +218,7 @@ const tire = [
         modelName: `Judge`,
         diameterAvail: [`29in`, `27.5in`],
         sizeAvail: [`2.4in`],
-        isTubelessReady: True,
+        isTubelessReady: true,
         priceUSD: 88,
         imgURL: `https://www.wtb.com/cdn/shop/products/W010-0855_20201028_Judge2.4x29_THG_ISO-01_large.png?v=1633592641`,
     },
@@ -228,7 +228,7 @@ const tire = [
         modelName: `Schwalbe One`,
         diameterAvail: [`700C`],
         sizeAvail: [`23mm`, `25mm`, `28mm`, `30mm`],
-        isTubelessReady: False,
+        isTubelessReady: false,
         priceUSD: 56,
         imgURL: `https://static.biketiresdirect.com/productimages/images650/SCNNG3-3.jpg`,
     },
@@ -238,7 +238,7 @@ const tire = [
         modelName: `Marathon Plus`,
         diameterAvail: [`700C`],
         sizeAvail: [`25mm`, `28mm`, `32mm`, `35mm`, `38mm`],
-        isTubelessReady: True,
+        isTubelessReady: true,
         priceUSD: 60,
         imgURL: `https://www.rei.com/media/19a9e075-0c7e-4908-969d-96b9332fecca.jpg?size=784x588`,
     },
@@ -247,9 +247,10 @@ const tire = [
 await TireConfig.insertMany(tire)
 console.log("created some tires")
 
+}
 
 const seedConfig = async () => {
-    // db.dropDatabase()
+    db.dropDatabase()
     await main()
     db.close()
 }

@@ -2,20 +2,35 @@ const express = require('express')
 const db = require('./db')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
-//const controllers
+
+//IMPORTS - Bike Config
+const { Brand, FrameConfig, GroupsetConfig, WheelConfig, TireConfig, KitConfig } = require(`./models/configIndex.js`)
+
+const brandConfigController = require(`./controllers/brandsConfigController.js`)
+const frameConfigController = require(`./controllers/frameConfigController.js`)
+
+
 
 const PORT = process.env.PORT || 3001
 
-const app = express()
 
+const app = express()
 //middleware
 app.use(logger ('dev'))
 app.use(bodyParser.json())
 
 //show routes
 
+app.get('/', (req, res) => res.send('INSERT HOME PAGE HERE'))
+//CRUD - Brands
+app.get(`/brands`, brandConfigController.getAll)
 
-//CRUD
+
+//CRUD - Bike Config
+
+//Frames
+app.get(`/bike-builder/frames`, frameConfigController.getAll)
+
 
 
 
