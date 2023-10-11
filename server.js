@@ -2,6 +2,7 @@ const express = require('express')
 const db = require('./db')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 //IMPORTS - DemoBikes
 const demoController = require("./controllers/demoController.js");
@@ -14,9 +15,6 @@ const frameConfigController = require(`./controllers/frameConfigController.js`)
 
 
 
-
-
-
 const PORT = process.env.PORT || 3001;
 
 
@@ -24,6 +22,7 @@ const app = express()
 //middleware
 app.use(logger("dev"));
 app.use(bodyParser.json());
+app.use(cors())
 
 //CRUD - Homepage
 app.get('/', (req, res) => res.send('INSERT HOME PAGE HERE'))
