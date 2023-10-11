@@ -22,11 +22,6 @@ window.addEventListener('load', async (event) => {
                 htmlString += `<div class="grid-model">${demoBikes[i].model}</div>\n`
                 htmlString += `<div class="grid-price">${demoBikes[i].price}</div>\n`
                 
-                // document.getElementById(`${demoAll[i].brand}`).innerHTML - htmlString
-                // document.getElementById(`${i + 1}`).innerHTML = htmlString
-
-                // let dPic = demoAll.data[i].picURL
-                // demoPic.innerHTML = `<img src=${dPic}>`
 
                 gridItem.innerHTML += htmlString
             }
