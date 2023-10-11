@@ -11,7 +11,7 @@ const main = async () => {
       year: 2022,
       size: "L",
       url: "https://www.pinkbike.com/buysell/3636725/",
-      imageUrl: "./images/transition.png",
+      imageUrl: "../images/transition.png",
       price: "2,599",
       savings: "2,400 USD",
       ships: true,
@@ -260,6 +260,7 @@ const main = async () => {
 };
 
 const run = async () => {
+  db.dropDatabase();
   await main();
   db.close();
 };
