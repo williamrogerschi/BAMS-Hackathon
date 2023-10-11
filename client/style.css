@@ -1,9 +1,15 @@
 html {
     font-family: 'Roboto Mono', monospace;
+    margin: 0;
 }
 
 body {
     margin: 0;
+    background-color: blanchedalmond;
+}
+
+main {
+    padding-bottom: 200px;
 }
 
 #images-nav {
@@ -58,18 +64,17 @@ ul {
 }
 
 a {
-    padding: 0 100px 0 100px;
+    padding: 0 40px 0 40px;
     text-decoration: none;
     color: black;
 }
 
 /* building out main body of page */
 .bike-build-container {
-    background-color:blanchedalmond;
-    border: 1px solid black;
     display: flex;
     align-items: row;
     padding-top: 100px;
+    padding-bottom: 40px;
 }
 
 #build-img {
@@ -79,10 +84,15 @@ a {
     height: 50vh;
     width: 200%;
     overflow: hidden;
+    margin-left: 20px;
+    outline: 1px solid black;
+    outline-offset: 10px;
+    border-radius: 10px;
 }
 
 #build-button-container {
     margin-left: 40px;
+    margin-right: 20px;
 }
 
 #build-header {
@@ -90,7 +100,7 @@ a {
     justify-content: center;
 }
 
-p {
+#build-text {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     display: flex;
@@ -112,3 +122,81 @@ p {
     background-color: rgba(188, 34, 34, 0.277);
     color: black;
 }
+
+.tiles-container {
+    background-color: blanchedalmond;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tiles-main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#bb {
+    border: 1px solid black;
+    box-shadow: 0.5px 0.5px 5px black;
+    height: 70px;
+    width: 120px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#db {
+    border: 1px solid black;
+    box-shadow: 0.5px 0.5px 5px black;
+    height: 70px;
+    width: 120px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#service {
+    border: 1px solid black;
+    box-shadow: 0.5px 0.5px 5px black;
+    height: 70px;
+    width: 120px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#brands {
+    border: 1px solid black;
+    box-shadow: 0.5px 0.5px 5px black;
+    height: 70px;
+    width: 120px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.footer-container {
+    background-color: rgb(234, 210, 174);
+    margin-bottom: -20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#footer-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: first baseline;
+    font-weight: bold;
+    color: grey;
+}
+
+
