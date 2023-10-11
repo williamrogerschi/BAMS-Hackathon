@@ -8,6 +8,7 @@ const frameConfigSchema = new Schema(
     availSizes: [{ type: String, required: true }],
     availColors: [{ type: String, required: true }],
     availDisc: [{ type: String, required: true }],
+    availWheel: [{ type: String, required: true }],
     priceUSD: { type: Number, required: true },
     imgURL: { type: String, required: true },
     },
