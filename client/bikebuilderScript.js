@@ -1,20 +1,14 @@
-// const dropdown = document.querySelector('button')
-// const movieResults = document.querySelector('div')
-// button.addEventListener('click', async () => {
-//     console.log("clicked")
-//     let response = await axios.get(
-//         `http://localhost:3001/movies/`
-//     )
-//     let movies = response.data
-//     console.log(movies)
-//     movies.forEach(element => {
-//         // movieResults.innerHTML += JSON.stringify(element)
-//         movieResults.innerHTML += element.title
-//     });
-// })
+
 
 let brandsDB = new Array
 let framesDB = new Array
+
+
+window.addEventListener('load', async (event) => {
+    event.preventDefault()
+    framesDB = await axios.get(`http://localhost:3001/bike-builder/frames`)
+    brandsDB = await axios.get(`http://localhost:3001/brands`)
+})
 
 let runFrames = async () => {
     framesDB = await axios.get(`http://localhost:3001/bike-builder/frames`)
