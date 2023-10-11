@@ -1,6 +1,6 @@
 const  { Schema } = require('mongoose')
 
-const wheelsConfigSchema = new Schema(    
+const wheelConfigSchema = new Schema(    
     {
     brand: { type: Schema.Types.ObjectId, ref: 'Brand'  },
     componentType: { type: String, required: true },
@@ -13,4 +13,4 @@ const wheelsConfigSchema = new Schema(
     { timestamps: true },
 )
 
-module.exports = wheelsConfigSchema
+module.exports = wheelConfigSchema
