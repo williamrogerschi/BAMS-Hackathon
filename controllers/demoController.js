@@ -1,4 +1,4 @@
-const { DemoModel } = require("../Models");
+const { DemoModel } = require("../models");
 
 module.exports = {
   getAllDemos,

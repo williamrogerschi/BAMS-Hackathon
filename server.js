@@ -34,6 +34,7 @@ app.get("/demos/:name", demoController.getOneDemo);
 
 //CRUD - Brands
 app.get(`/brands`, brandConfigController.getAll)
+app.get(`/brands/:id`, brandConfigController.getByID)
 
 //CRUD - Bike Config
 //Frames

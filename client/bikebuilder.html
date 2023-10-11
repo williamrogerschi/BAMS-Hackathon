@@ -9,22 +9,48 @@
     <title>BAM's Bike Builder</title>
 </head>
 <body>
-    <div class="config-options-selector" id="frame-options-selector">
-        <h2>Select a frame</h2>
-        <select id="frameConfig-frame">
-            <option value="free">Free</option>
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
+    <!-- <div class="selection-box">
+        <h2>Selected Options</h2>
+        <div class="selection-category" id="selection-frame">
+
+        </div>
+        <div class="selection-category" id="selection-frame-options">
+
+        </div>
+    </div> -->
+
+    <form class="config-options-selector" id="frame-selector">
+        <label>Select a frame</labl>
+        <select name="frames" id="frameConfig-frame">
+            <option value="select">--Select a Frame--</option>
+            <!-- Dropdown via JS Script -->
         </select>
-        <button id="select-frame">Select Frame</button>
-        <select id="frameConfig-frame-options">
-            <option value="free">Free</option>
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
+        <input type="submit" value="Select Frame" />
+    </form>
+
+    <div class="config-options-selector" id="frame-options-selector">
+        <h4>Select frame options</h4>
+        <select id="frameConfig-availSizes">
+            <option>--Select a Size--</option>
+            <!-- Dropdown via JS Script -->
+        </select>
+        <select id="frameConfig-availColors">
+            <option>--Select a Color--</option>
+            <!-- Dropdown via JS Script -->
+        </select>
+        <select id="frameConfig-availDisc">
+            <option>--Select a Brake Type--</option>
+            <!-- Dropdown via JS Script -->
+        </select>
+        <select id="frameConfig-availWheel">
+            <option>--Select a Wheel Size--</option>
+            <!-- Dropdown via JS Script -->
         </select>
         <button id="select-frame">Select Frame Options</button>
-
     </div>
+
+       
+
     
 </body>
 </html>
