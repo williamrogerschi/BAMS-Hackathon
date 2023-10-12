@@ -1,8 +1,8 @@
-const express = require('express')
-const db = require('./db')
-const logger = require('morgan')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+const express = require("express");
+const db = require("./db");
+const logger = require("morgan");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 //IMPORTS - DemoBikes
 const demoController = require("./controllers/demoController.js");
@@ -17,34 +17,34 @@ const frameConfigController = require(`./controllers/frameConfigController.js`)
 const cartController = require(`./controllers/cartController.js`)
 
 
-
 const PORT = process.env.PORT || 3001;
 
-
-const app = express()
+const app = express();
 //middleware
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 
 //CRUD - Homepage
-app.get('/', (req, res) => res.send('INSERT HOME PAGE HERE'))
+app.get("/", (req, res) => res.send("INSERT HOME PAGE HERE"));
 
 //CRUD - Demos
 app.get("/demos", demoController.getAllDemos);
-app.get("/demos/:name", demoController.getOneDemo);
+app.get("/demos/:brand", demoController.getOneDemo);
 
 //CRUD - Brands
-app.get(`/brands`, brandConfigController.getAll)
-app.get(`/brands/:id`, brandConfigController.getByID)
+app.get(`/brands`, brandConfigController.getAll);
+app.get(`/brands/:id`, brandConfigController.getByID);
 
 //CRUD - Bike Config
 //Frames
-app.get(`/bike-builder/frames`, frameConfigController.getAll)
+app.get(`/bike-builder/frames`, frameConfigController.getAll);
 
 //CRUD - Shopping Cart
 app.get('/cart', cartController.getCart)
 
+//shopping cart array:
+const shoppingCart = [];
 
 // Add an item to the shopping cart
 app.post("/cart/:name", (req, res) => {
