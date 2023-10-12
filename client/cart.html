@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cart Bikes</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="cart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,600;1,200&display=swap" rel="stylesheet">
-</head>
-<body>
-    
+    <script defer src="cart.js"></script>
+    <link rel="stylesheet" type="text/css" href="cart.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="cart">
+      <h1>Shopping Cart</h1>
+    </div>
 
     <div class="header-images">
-        <ul id="images-nav">
-            <li id="aethos-header"></li>
-            <li id="surly-header"></li>
-
-        </ul>
+      <ul id="images-nav">
+        <li id="aethos-header"></li>
+        <li id="surly-header"></li>
+      </ul>
     </div>
-    
 
     <div id="navbar">
         <ul class="nav-bar">
@@ -30,35 +33,28 @@
         </ul>
      </div>
     
-    
-    
-        <div id="wrapper">
-        <div id="container">
-            <h1>Shopping list</h1>
-            <div id="items"></div>
-        </div>
-            <div id="container">
-                <h1>Cart</h1>
-                <div id="cart"></div>
-            </div>
-        </div>
 
+    <div id="wrapper">
+      <div id="container">
+        <h1>Shopping list</h1>
+        <div id="items"></div>
+      </div>
+      <div id="container">
+        <h1>Cart</h1>
+        <div id="cart"></div>
+      </div>
+    </div>
 
-        
-    
-    
-    
     <footer>
-        <div class="footer-container">
-            <ul id="footer-list"> Contact:
-                <li>Address: 1234 N. Wayward St.</li>
-                <li>Location: Boulder, CO</li>
-                <li>Phone: 734-555-1234</li>
-                <li>Email: BAMS@radbikebuilds.com</li>
-            </ul>
-        </div>
-     </footer>
-
-</body>
-
+      <div class="footer-container">
+        <ul id="footer-list">
+          Contact:
+          <li>Address: 1234 N. Wayward St.</li>
+          <li>Location: Boulder, CO</li>
+          <li>Phone: 734-555-1234</li>
+          <li>Email: BAMS@radbikebuilds.com</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>
