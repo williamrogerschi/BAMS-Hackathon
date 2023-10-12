@@ -8,17 +8,14 @@ const cors = require("cors");
 const demoController = require("./controllers/demoController.js");
 
 //IMPORTS - Bike Config
-const {
-  Brand,
-  FrameConfig,
-  GroupsetConfig,
-  WheelConfig,
-  TireConfig,
-  KitConfig,
-} = require(`./models/configIndex.js`);
+const { Brand, FrameConfig, GroupsetConfig, WheelConfig, TireConfig, KitConfig } = require(`./models/configIndex.js`)
 
-const brandConfigController = require(`./controllers/brandsConfigController.js`);
-const frameConfigController = require(`./controllers/frameConfigController.js`);
+const brandConfigController = require(`./controllers/brandsConfigController.js`)
+const frameConfigController = require(`./controllers/frameConfigController.js`)
+
+//IMPORTS - Cart
+const cartController = require(`./controllers/cartController.js`)
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -44,22 +41,25 @@ app.get(`/brands/:id`, brandConfigController.getByID);
 app.get(`/bike-builder/frames`, frameConfigController.getAll);
 
 //CRUD - Shopping Cart
+app.get('/cart', cartController.getCart)
 
 //shopping cart array:
 const shoppingCart = [];
 
 // Add an item to the shopping cart
 app.post("/cart/:name", (req, res) => {
-  const { name } = req.params;
-  const item = shoppingCart.find((item) => item.name === name);
+  const { name } = req.params
+  const item = shoppingCart.find((item) => item.name === name)
 
   if (item) {
-    res.status(400).send("Item already in the shopping cart");
+    res.status(400).send("Item already in the shopping cart")
   } else {
     shoppingCart.push({ name });
-    res.status(200).send("Item added to the shopping cart");
+    res.status(200).send("Item added to the shopping cart")
   }
-});
+
+})
+
 
 // Get the contents of the shopping cart
 app.get("/cart", (req, res) => {
