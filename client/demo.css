@@ -8,6 +8,7 @@ body {
     background-color: blanchedalmond;
 }
 
+
 main {
     padding-bottom: 200px;
 }
@@ -74,9 +75,6 @@ a {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* background-color: rgb(234, 210, 174); */
-    /* padding-top: 100px; */
-    /* padding-bottom: 100px; */
 }
 
 #demo-header {
@@ -103,22 +101,21 @@ a {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding-bottom: 10px;
-    position: absolute;
-  }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+}
   
 .grid-item {
     display: grid;
-    grid-template-columns: 1fr;
-
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 100px;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     margin: 20px;
     position: relative;
+    height: 30%;
   }
 
 .grid-image {
@@ -153,6 +150,7 @@ a {
     justify-content: center;
     align-items: center;
     color: black;
+    z-index: 1;
 }
 
 
