@@ -14,8 +14,10 @@ async function getAllDemos(req, res) {
 }
 
 async function getOneDemo(req, res) {
-  const { brand } = req.params; // Assuming you're passing the name as a parameter
-  const demo = await DemoModel.findOne({ brand: brand });
+  const { id } = req.params; // Assuming you're passing the name as a parameter
+  const demo = await DemoModel.findOne({ _id: id });
+
+
 
   if (demo) {
     return res.json(demo);

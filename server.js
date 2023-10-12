@@ -8,6 +8,7 @@ const cors = require("cors");
 const demoController = require("./controllers/demoController.js");
 
 //IMPORTS - Bike Config
+
 const { Brand, FrameConfig, GroupsetConfig, WheelConfig, TireConfig, KitConfig } = require(`./models/configIndex.js`)
 
 const brandConfigController = require(`./controllers/brandsConfigController.js`)
@@ -15,7 +16,6 @@ const frameConfigController = require(`./controllers/frameConfigController.js`)
 
 //IMPORTS - Cart
 const cartController = require(`./controllers/cartController.js`)
-
 
 const PORT = process.env.PORT || 3001;
 
@@ -29,8 +29,12 @@ app.use(cors());
 app.get("/", (req, res) => res.send("INSERT HOME PAGE HERE"));
 
 //CRUD - Demos
+//get all:
 app.get("/demos", demoController.getAllDemos);
-app.get("/demos/:brand", demoController.getOneDemo);
+//get one demo by ID:
+app.get("/demos/:id", demoController.getOneDemo);
+
+
 
 //CRUD - Brands
 app.get(`/brands`, brandConfigController.getAll);
@@ -41,30 +45,32 @@ app.get(`/brands/:id`, brandConfigController.getByID);
 app.get(`/bike-builder/frames`, frameConfigController.getAll);
 
 //CRUD - Shopping Cart
-app.get('/cart', cartController.getCart)
+//app.get('/cart', cartController.getCart)
+
 
 //shopping cart array:
 const shoppingCart = [];
-
-// Add an item to the shopping cart
-app.post("/cart/:name", (req, res) => {
-  const { name } = req.params
-  const item = shoppingCart.find((item) => item.name === name)
-
-  if (item) {
-    res.status(400).send("Item already in the shopping cart")
-  } else {
-    shoppingCart.push({ name });
-    res.status(200).send("Item added to the shopping cart")
-  }
-
-})
-
 
 // Get the contents of the shopping cart
 app.get("/cart", (req, res) => {
   res.json(shoppingCart);
 });
+
+// Add an item to the shopping cart array
+app.post('/cart/:id', async (req, res) => {
+  const { id } = req.params;
+  const item = await DemoModel.findOne({ id }); // Retrieve item details from the database
+
+  if (item) {
+  
+    shoppingCart.push(item);
+    res.status(200).send('Item added to the shopping cart');
+  } else {
+    res.status(404).send('Item not found');
+  }
+});
+
+
 
 //listening
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
