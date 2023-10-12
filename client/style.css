@@ -203,3 +203,7 @@ li {
     display: none;
 }
 
+#show-frame-selection {
+    display: none;
+    background-color: cadetblue;
+}
