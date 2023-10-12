@@ -111,27 +111,21 @@ a {
 .grid-item {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 100px;
     font-size: 30px;
     text-align: center;
     margin: 20px;
     position: relative;
-    /* height: 500px;
-    width: 500px; */
   }
 
 .grid-image {
     display: grid;
     background-size: 100%;
-    /* max-height: 100%;
-    min-height: 100%; */
     max-width: 100%;
     min-width: 100%;
 }
-
-
 
 
 .footer-container {
@@ -148,6 +142,16 @@ a {
     align-items: first baseline;
     font-weight: bold;
     color: grey;
+}
+
+.cart-btn {
+    background-color: rgba(128, 128, 128, 0.180);
+    border: 1px solid grey;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
 }
 
 
