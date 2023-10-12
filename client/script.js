@@ -9,13 +9,13 @@ window.addEventListener('load', async (event) => {
         let gridHTML = document.getElementById("demo-bikes-container")
         console.log(demoBikes)
             for(let i = 0; i < demoBikes.length; i++) {
-                gridHTML.innerHTML += `<a class="grid-item" id="box${i}">` //also added it up here - we can see once the button actually functions if it will let us click both while the whole a div is a link.
-               
+                gridHTML.innerHTML += `<a class="grid-item" id="box${i}" href="${demoBikes[i].url}">` //also added it up here - we can see once the button actually functions if it will let us click both while the whole a div is a link.
+
                 let gridItem = document.querySelector(`#box${i}`)
 
                 let htmlString = new String()
                 
-                // htmlString += `<a class="demo-image" target="_blank" href="${demoBikes[i].url}"><img class="grid-image" src="${demoBikes[i].imageUrl}"></a>\n` //possibly can add the link to the ex site in the image?
+
                 htmlString += `<img class="grid-image" src="${demoBikes[i].imageUrl}">\n` //possibly can add the link to the ex site in the image?
                 htmlString += `<div class="grid-brand">${demoBikes[i].brand}</div>\n`
                 htmlString += `<div class="grid-model">${demoBikes[i].model}</div>\n`
@@ -26,4 +26,3 @@ window.addEventListener('load', async (event) => {
                 gridItem.innerHTML += htmlString
             }
 })
-
