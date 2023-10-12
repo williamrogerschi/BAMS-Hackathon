@@ -199,5 +199,7 @@ li {
     color: grey;
 }
 
-
+#frame-options-selector {
+    display: none;
+}
 
