@@ -48,9 +48,6 @@ app.get(`/bike-builder/frames`, frameConfigController.getAll);
 //app.get('/cart', cartController.getCart)
 
 
-//shopping cart array:
-const shoppingCart = [];
-
 // Get the contents of the shopping cart
 app.get("/cart", (req, res) => {
   res.json(shoppingCart);

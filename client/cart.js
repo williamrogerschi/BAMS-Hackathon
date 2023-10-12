@@ -1,11 +1,13 @@
-//query to get the html element
+//query to get the html elements
+const addToCartButtons = document.querySelectorAll(".cart-buttons");
 
-const addToCartButtons = document.querySelectorAll(".add-to-cart"); //class of the buttons
-//const cartItemsList = document.getElementById("cart-items");
+const Cart = document.getElementById("cart");
+
+const shoppingCart = [];
 
 addToCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const itemId = button.getAttribute("data-id"); //this needs to be the items id in the database--> each button needs the html id of the data's id
+    const itemId = button.getAttribute("id"); //this needs to be the items id in the database--> each button needs the html id of the data's id
     addToCart(itemId);
   });
 });
@@ -15,12 +17,17 @@ function addToCart(itemId) {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", `/cart/${itemId}`, true); //true - indicates that the request should be asynchronous, so it won't block the rest of your code.
 
+  //onreadystate calls the function every time the state of the request changes
   xhr.onreadystatechange = function () {
+    //response 4=request complete
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         const item = document.getElementById(itemId);
-        const clonedItem = item.cloneNode(true);
-        cartItemsList.appendChild(clonedItem);
+        const clonedItem = item.cloneNode(true); //cloning the item with the specified id
+        const htmlShoppingCart = document.getElementById("cart");
+        shoppingCart.push(clonedItem);
+        htmlShoppingCart.appendChild(clonedItem);
+        //htmlShoppingCart.innerHTML += shoppingCart[shoppingCart.length - 1];
       } else if (xhr.status === 404) {
         alert("Item not found");
       } else {
