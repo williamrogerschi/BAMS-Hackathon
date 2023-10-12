@@ -1,8 +1,7 @@
-const demoPic = document.querySelector('.grid-image')
-
-
+const demoPic = document.querySelector(".grid-image");
 
 // MAIN function for API calls
+
 window.addEventListener('load', async (event) => {
     event.preventDefault()
         let demoAll = await axios.get(`http://localhost:3001/demos`)
@@ -27,5 +26,4 @@ window.addEventListener('load', async (event) => {
                 gridItem.innerHTML += htmlString
             }
 })
-
 
