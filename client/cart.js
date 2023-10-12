@@ -1,25 +1,28 @@
 //query to get the html elements
 const addToCartButtons = document.querySelectorAll(".cart-buttons");
 const Cart = document.getElementById("cart");
-console.log(document)
 
 const shoppingCart = [];
-
+console.log(shoppingCart)
 addToCartButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    console.log("button working");
     const itemId = button.getAttribute("id"); //this needs to be the items id in the database--> each button needs the html id of the data's id
+    console.log(itemID)
     addToCart(itemId);
+    console.log(shoppingCart)
   });
 });
+console.log(shoppingCart);
 
 async function addToCart(itemId) {
   try {
     // Send a POST request to add the item to the shopping cart
-    const response = await axios.post(`/client/cart.js/${itemId}`);
+    const response = await axios.post(`/cart/${itemId}`);
     //CHECK^
 
     if (response.status === 200) {
-      const item = document.getElementById(itemId);
+      const item = document.getElementById("itemId");
       const clonedItem = item.cloneNode(true);
       const htmlShoppingCart = document.getElementById("cart");
       shoppingCart.push(clonedItem);
