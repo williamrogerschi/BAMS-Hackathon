@@ -111,6 +111,7 @@ a {
 .grid-item {
     display: grid;
     grid-template-columns: 1fr;
+
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 100px;

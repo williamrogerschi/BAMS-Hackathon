@@ -22,7 +22,6 @@ window.addEventListener('load', async (event) => {
                 htmlString += `<div class="grid-model">${demoBikes[i].model}</div>\n`
                 htmlString += `<div class="grid-price">${demoBikes[i].price}</div>\n`
                 htmlString += `<div class="cart-btn" id="${demoBikes[i]._id}">Add to Cart</div>\n`
-
                 
 
                 gridItem.innerHTML += htmlString
