@@ -260,7 +260,7 @@ const main = async () => {
 };
 
 const run = async () => {
-  db.dropDatabase();
+  // db.dropDatabase();
   await main();
   db.close();
 };

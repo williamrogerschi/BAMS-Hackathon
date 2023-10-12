@@ -1,6 +1,7 @@
 //query to get the html elements
 const addToCartButtons = document.querySelectorAll(".cart-buttons");
 const Cart = document.getElementById("cart");
+console.log(document)
 
 const shoppingCart = [];
 
