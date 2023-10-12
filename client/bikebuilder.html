@@ -9,15 +9,6 @@
     <title>BAM's Bike Builder</title>
 </head>
 <body>
-    <!-- <div class="selection-box">
-        <h2>Selected Options</h2>
-        <div class="selection-category" id="selection-frame">
-
-        </div>
-        <div class="selection-category" id="selection-frame-options">
-
-        </div>
-    </div> -->
 
 
     <div class="header-images">
@@ -39,12 +30,12 @@
      </div>
 
     <form class="config-options-selector" id="frame-selector">
-        <label>Select a frame</labl>
+        <h4>Select a frame</h4>
         <select name="frames" id="frameConfig-frame">
             <option value="select">--Select a Frame--</option>
             <!-- Dropdown via JS Script -->
         </select>
-        <button id="btn-frame-select">Select Frame</button>
+        <button type="button" id="btn-frame-select">Select A Frame</button>
         <!-- <input type="submit" value="Select Frame" /> -->
     </div>
 
@@ -54,9 +45,7 @@
             <option>--Select a Size--</option>
             <!-- Dropdown via JS Script -->
         </select>
-       
-        
-        
+
         <select id="frameConfig-availColors">
             <option>--Select a Color--</option>
             <!-- Dropdown via JS Script -->
@@ -69,9 +58,14 @@
             <option>--Select a Wheel Size--</option>
             <!-- Dropdown via JS Script -->
         </select>
-        <button id="select-frame">Select Frame Options</button>
+        <button type="button" id="btn-frame-options-select">Select Frame Options</button>
     </div>
 
+
+    <div class="show-selection" id="show-frame-selection">
+        <h2>You Selected</h2>
+        <div id="render-frame"></div>
+    </div>
        
 
     
