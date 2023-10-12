@@ -10,7 +10,7 @@ window.addEventListener('load', async (event) => {
         let gridHTML = document.getElementById("demo-bikes-container")
         console.log(demoBikes)
             for(let i = 0; i < demoBikes.length; i++) {
-                gridHTML.innerHTML += `<a class="grid-item" id="box${i}" href="#">`
+                gridHTML.innerHTML += `<a class="grid-item" id="box${i}" href="${demoBikes[i].url}">` //also added it up here - we can see once the button actually functions if it will let us click both while the whole a div is a link.
                
                 let gridItem = document.querySelector(`#box${i}`)
 
