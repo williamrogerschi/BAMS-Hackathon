@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo Bikes</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer src="script.js"></script>
-    <script defer src="cart.js"></script>
-    <link rel="stylesheet" type="text/css" href="demo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,600;1,200&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-
+    <!-- <script defer src="cart.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="header-images">
-        <ul id="images-nav">
-            <li id="aethos-header"></li>
-            <li id="surly-header"></li>
-
-        </ul>
+      <ul id="images-nav">
+        <li id="aethos-header"></li>
+        <li id="surly-header"></li>
+      </ul>
     </div>
-    
 
     <div id="navbar">
-        <ul class="nav-bar">
-         <a href="index.html">Home</a>
-         <a href ="bikebuilder.html">Bike Builder</a>
-         <a href="demobikes.html">Demo Bikes</a>
-         <a href ="cart.html">Cart</a>
-        </ul>
-     </div>
+      <ul class="nav-bar">
+        <a href="index.html">Home</a>
+        <a href="bikebuilder.html">Bike Builder</a>
+        <a href="demobikes.html">Demo Bikes</a>
+        <a href="cart.html">Cart</a>
+      </ul>
+    </div>
 
-     <main class="main-page">
+    <main class="main-page">
+      <div class="demo-info">
+        <h2 id="demo-header">Demo Bikes</h2>
+        <h5 id="demo-subheader">
+          Want a bike but don't want to pay top dollar? Look no further, we got
+          ya covered!
+        </h5>
+        <p id="demo-text">
+          Demo bikes are bikes that have been used as part of a company or
+          manufacturer demo fleet. These bikes generally show signs of use, as
+          expected with all demo bikes, but are not only at a better price point
+          but also come with a manufacturer’s warranty. With all of this, demo
+          bikes are well worth considering as a viable option for your next big
+          bike upgrade.
+        </p>
+      </div>
 
-        <div class="demo-info">
-            <h2 id="demo-header">Demo Bikes</h2>
-            <h5 id="demo-subheader">Want a bike but don't want to pay top dollar? Look no further, we got ya covered!</h5>
-                <p id="demo-text">Demo bikes are bikes that have been used as part of a company or manufacturer demo fleet. These bikes generally show signs of use, as expected with all demo bikes, but are not only at a better price point but also come with a manufacturer’s warranty. With all of this, demo bikes are well worth considering as a viable option for your next big bike upgrade.</p>
-        </div>
+      <div class="grid-container" id="demo-bikes-container"></div>
+    </main>
 
-
-        <div class="grid-container" id="demo-bikes-container"></div>
-
-
-        </main>
-        
-    
-    
-    
     <footer>
-        <div class="footer-container">
-            <ul id="footer-list"> Contact:
-                <li>Address: 1234 N. Wayward St.</li>
-                <li>Location: Boulder, CO</li>
-                <li>Phone: 734-555-1234</li>
-                <li>Email: BAMS@radbikebuilds.com</li>
-            </ul>
-        </div>
-     </footer>
-
-
-</body>
-
+      <div class="footer-container">
+        <ul id="footer-list">
+          Contact:
+          <li>Address: 1234 N. Wayward St.</li>
+          <li>Location: Boulder, CO</li>
+          <li>Phone: 734-555-1234</li>
+          <li>Email: BAMS@radbikebuilds.com</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>
