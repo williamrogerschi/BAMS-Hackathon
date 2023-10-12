@@ -17,10 +17,12 @@ window.addEventListener('load', async (event) => {
 
                 let htmlString = new String()
 
-                htmlString += `<img class="grid-image" src="${demoBikes[i].imageUrl}">\n`
+                // htmlString += `<a class="grid-item" href="${demoBikes[i].url}"\n` //not sure about this, as this takes over the button function - unless there is a way around?
+                htmlString += `<img class="grid-image" src="${demoBikes[i].imageUrl}">\n` //possibly can add the link to the ex site in the image?
                 htmlString += `<div class="grid-brand">${demoBikes[i].brand}</div>\n`
                 htmlString += `<div class="grid-model">${demoBikes[i].model}</div>\n`
                 htmlString += `<div class="grid-price">${demoBikes[i].price}</div>\n`
+                htmlString += `<div class="cart-btn" id="${demoBikes[i]._id}">Add to Cart</div>\n`
                 
 
                 gridItem.innerHTML += htmlString
