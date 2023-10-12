@@ -60,7 +60,7 @@ window.addEventListener('load', async (event) => {
       console.error(error);
     }
   }
-});
+
 
 //     try {
 //       // Send a POST request to add the item to the shopping cart
