@@ -17,6 +17,8 @@ async function getOneDemo(req, res) {
   const { id } = req.params; // Assuming you're passing the name as a parameter
   const demo = await DemoModel.findOne({ _id: id });
 
+
+
   if (demo) {
     return res.json(demo);
   } else {

@@ -8,7 +8,7 @@ const cors = require("cors");
 const demoController = require("./controllers/demoController.js");
 
 //IMPORTS - Bike Config
-<<<<<<< HEAD
+
 const { Brand, FrameConfig, GroupsetConfig, WheelConfig, TireConfig, KitConfig } = require(`./models/configIndex.js`)
 
 const brandConfigController = require(`./controllers/brandsConfigController.js`)
@@ -16,20 +16,6 @@ const frameConfigController = require(`./controllers/frameConfigController.js`)
 
 //IMPORTS - Cart
 const cartController = require(`./controllers/cartController.js`)
-
-=======
-const {
-  Brand,
-  FrameConfig,
-  GroupsetConfig,
-  WheelConfig,
-  TireConfig,
-  KitConfig,
-} = require(`./models/configIndex.js`);
->>>>>>> 3b89629 (cart js started)
-
-const brandConfigController = require(`./controllers/brandsConfigController.js`);
-const frameConfigController = require(`./controllers/frameConfigController.js`);
 
 const PORT = process.env.PORT || 3001;
 
@@ -48,6 +34,8 @@ app.get("/demos", demoController.getAllDemos);
 //get one demo by ID:
 app.get("/demos/:id", demoController.getOneDemo);
 
+
+
 //CRUD - Brands
 app.get(`/brands`, brandConfigController.getAll);
 app.get(`/brands/:id`, brandConfigController.getByID);
@@ -59,12 +47,9 @@ app.get(`/bike-builder/frames`, frameConfigController.getAll);
 //CRUD - Shopping Cart
 //app.get('/cart', cartController.getCart)
 
-<<<<<<< HEAD
-=======
+
 //shopping cart array:
 const shoppingCart = [];
->>>>>>> 3b89629 (cart js started)
-
 
 // Get the contents of the shopping cart
 app.get("/cart", (req, res) => {
