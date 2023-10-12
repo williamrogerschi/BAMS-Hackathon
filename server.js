@@ -1,13 +1,14 @@
-const express = require('express')
-const db = require('./db')
-const logger = require('morgan')
-const bodyParser = require('body-parser')
-const cors = require('cors')
+const express = require("express");
+const db = require("./db");
+const logger = require("morgan");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 //IMPORTS - DemoBikes
 const demoController = require("./controllers/demoController.js");
 
 //IMPORTS - Bike Config
+<<<<<<< HEAD
 const { Brand, FrameConfig, GroupsetConfig, WheelConfig, TireConfig, KitConfig } = require(`./models/configIndex.js`)
 
 const brandConfigController = require(`./controllers/brandsConfigController.js`)
@@ -16,55 +17,75 @@ const frameConfigController = require(`./controllers/frameConfigController.js`)
 //IMPORTS - Cart
 const cartController = require(`./controllers/cartController.js`)
 
+=======
+const {
+  Brand,
+  FrameConfig,
+  GroupsetConfig,
+  WheelConfig,
+  TireConfig,
+  KitConfig,
+} = require(`./models/configIndex.js`);
+>>>>>>> 3b89629 (cart js started)
 
+const brandConfigController = require(`./controllers/brandsConfigController.js`);
+const frameConfigController = require(`./controllers/frameConfigController.js`);
 
 const PORT = process.env.PORT || 3001;
 
-
-const app = express()
+const app = express();
 //middleware
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 
 //CRUD - Homepage
-app.get('/', (req, res) => res.send('INSERT HOME PAGE HERE'))
+app.get("/", (req, res) => res.send("INSERT HOME PAGE HERE"));
 
 //CRUD - Demos
+//get all:
 app.get("/demos", demoController.getAllDemos);
-app.get("/demos/:name", demoController.getOneDemo);
+//get one demo by ID:
+app.get("/demos/:id", demoController.getOneDemo);
 
 //CRUD - Brands
-app.get(`/brands`, brandConfigController.getAll)
-app.get(`/brands/:id`, brandConfigController.getByID)
+app.get(`/brands`, brandConfigController.getAll);
+app.get(`/brands/:id`, brandConfigController.getByID);
 
 //CRUD - Bike Config
 //Frames
-app.get(`/bike-builder/frames`, frameConfigController.getAll)
+app.get(`/bike-builder/frames`, frameConfigController.getAll);
 
 //CRUD - Shopping Cart
-app.get('/cart', cartController.getCart)
+//app.get('/cart', cartController.getCart)
 
-
-// Add an item to the shopping cart
-app.post("/cart/:name", (req, res) => {
-  const { name } = req.params
-  const item = shoppingCart.find((item) => item.name === name)
-
-  if (item) {
-    res.status(400).send("Item already in the shopping cart")
-  } else {
-    shoppingCart.push({ name });
-    res.status(200).send("Item added to the shopping cart")
-  }
-
-})
+<<<<<<< HEAD
+=======
+//shopping cart array:
+const shoppingCart = [];
+>>>>>>> 3b89629 (cart js started)
 
 
 // Get the contents of the shopping cart
 app.get("/cart", (req, res) => {
   res.json(shoppingCart);
 });
+
+// Add an item to the shopping cart array
+app.post('/cart/:id', async (req, res) => {
+  const { id } = req.params;
+  const item = await DemoModel.findOne({ id }); // Retrieve item details from the database
+
+  if (item) {
+  
+    shoppingCart.push(item);
+    res.status(200).send('Item added to the shopping cart');
+  } else {
+    res.status(404).send('Item not found');
+  }
+});
+
+
 
 //listening
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

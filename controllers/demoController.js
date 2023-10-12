@@ -14,14 +14,14 @@ async function getAllDemos(req, res) {
 }
 
 async function getOneDemo(req, res) {
-  const { name } = req.params; // Assuming you're passing the name as a parameter
-  const demo = await DemoModel.findOne({ name: name });
+  const { id } = req.params; // Assuming you're passing the name as a parameter
+  const demo = await DemoModel.findOne({ _id: id });
 
   if (demo) {
     return res.json(demo);
   } else {
     res
       .status(404)
-      .send("Discounted demo-bike with the specified name does not exist");
+      .send("Discounted demo-bike with the specified brand does not exist");
   }
 }
